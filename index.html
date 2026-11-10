@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fffaf7" />
+  <meta name="description" content="日本からメインへ。もうすぐ会えるね。" />
+  <title>もうすぐ会える</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=Shantell+Sans:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="page" id="main">
+    <section class="countdown-section" aria-label="会えるまでのカウントダウン">
+      <div class="route-line">日本 <span aria-hidden="true">✈</span> メイン</div>
+      <div class="countdown-card">
+        <div id="countdown" class="countdown" role="timer" aria-label="到着までの時間">
+          <div class="count-main"><strong id="big-num">–</strong><span id="big-unit">日後</span></div>
+          <div class="time-parts" aria-hidden="true">
+            <div class="time-part"><b id="hh">–</b><span>時</span></div>
+            <span class="time-separator">:</span>
+            <div class="time-part"><b id="mm">–</b><span>分</span></div>
+            <span class="time-separator">:</span>
+            <div class="time-part"><b id="ss">–</b><span>秒</span></div>
+          </div>
+        </div>
+        <div class="arrived" id="arrived" hidden>会えたね<small>まってたよ。</small></div>
+        <p class="countdown-caption" id="status">もうすぐ会えるね</p>
+      </div>
+      <p class="arrival-date">到着 <strong id="arrives">未定</strong></p>
+      <span class="sr" id="live" aria-live="off"></span>
+    </section>
+
+    <section class="list-section" id="list" aria-label="やること">
+      <div class="overall-card">
+        <div class="overall-header"><span lang="ja">やること</span><strong id="overall-count">0 / 23</strong></div>
+        <div class="overall-track" role="progressbar" id="overall-progress" aria-valuemin="0" aria-valuemax="23" aria-valuenow="0" aria-label="やることの進み具合"><span id="overall-fill"></span></div>
+      </div>
+      <div class="bucket-grid">
+        <details class="bucket blush" data-group="eat" id="eat" open>
+          <summary class="bucket-heading">
+            <span class="bucket-title-wrap"><span class="bucket-title" lang="ja">ごはん</span></span>
+            <span class="bucket-count" data-progress="eat">0/12</span>
+            <svg aria-hidden="true" class="chevron" fill="none" height="18" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24" width="18"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
+          <div class="bucket-content">
+            <ul class="tasks" data-list="eat">
+              <li><label class="task"><input data-id="aroma" type="checkbox"><span>Aroma Joe's</span></label></li>
+              <li><label class="task"><input data-id="dunkin" type="checkbox"><span>Dunkin'</span></label></li>
+              <li><label class="task"><input data-id="holy-donut" type="checkbox"><span>The Holy Donut</span></label></li>
+              <li><label class="task"><input data-id="eggnog" type="checkbox"><span>Eggnog</span></label></li>
+              <li><label class="task"><input data-id="canes" type="checkbox"><span>Raising Cane's</span></label></li>
+              <li><label class="task"><input data-id="popeyes" type="checkbox"><span>Popeyes</span></label></li>
+              <li><label class="task"><input data-id="chipotle" type="checkbox"><span>Chipotle</span></label></li>
+              <li><label class="task"><input data-id="moes" type="checkbox"><span>Moe's BBQ</span></label></li>
+              <li><label class="task"><input data-id="applebees" type="checkbox"><span>Applebee's</span></label></li>
+              <li><label class="task"><input data-id="chilis" type="checkbox"><span>Chili's</span></label></li>
+              <li><label class="task"><input data-id="olive-garden" type="checkbox"><span>Olive Garden</span></label></li>
+              <li><label class="task"><input data-id="bdubs" type="checkbox"><span>Buffalo Wild Wings</span></label></li>
+            </ul>
+            <div class="bucket-actions">
+              <button class="add-trigger" data-add="eat" type="button">追加</button>
+              <button aria-pressed="false" class="edit-trigger" data-editmode="eat" type="button">編集</button>
+            </div>
+            <form class="add-form" data-add-form="eat" hidden>
+              <label class="sr" for="new-eat">ごはんに追加</label>
+              <input autocomplete="off" id="new-eat" maxlength="90" placeholder="なにを追加する？" required type="text">
+              <div class="form-actions">
+                <button class="save-btn" type="submit">追加する</button>
+                <button class="cancel-btn" data-cancel-add="eat" type="button">やめる</button>
+              </div>
+            </form>
+          </div>
+        </details>
+
+        <details class="bucket sage" data-group="go" id="go">
+          <summary class="bucket-heading">
+            <span class="bucket-title-wrap"><span class="bucket-title" lang="ja">おでかけ</span></span>
+            <span class="bucket-count" data-progress="go">0/8</span>
+            <svg aria-hidden="true" class="chevron" fill="none" height="18" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24" width="18"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
+          <div class="bucket-content">
+            <ul class="tasks" data-list="go">
+              <li><label class="task"><input data-id="campus" type="checkbox"><span>University</span></label></li>
+              <li><label class="task"><input data-id="target" type="checkbox"><span>Target</span></label></li>
+              <li><label class="task"><input data-id="walmart" type="checkbox"><span>Walmart</span></label></li>
+              <li><label class="task"><input data-id="oob" type="checkbox"><span>Old Orchard Beach</span></label></li>
+              <li><label class="task"><input data-id="head-light" type="checkbox"><span>Portland Head Light</span></label></li>
+              <li><label class="task"><input data-id="llbean" type="checkbox"><span>L.L. Bean</span></label></li>
+              <li><label class="task"><input data-id="whites" type="checkbox"><span>The White Mountains</span></label></li>
+              <li><label class="task"><input data-id="boston" type="checkbox"><span>A day in Boston</span></label></li>
+            </ul>
+            <div class="bucket-actions">
+              <button class="add-trigger" data-add="go" type="button">追加</button>
+              <button aria-pressed="false" class="edit-trigger" data-editmode="go" type="button">編集</button>
+            </div>
+            <form class="add-form" data-add-form="go" hidden>
+              <label class="sr" for="new-go">おでかけに追加</label>
+              <input autocomplete="off" id="new-go" maxlength="90" placeholder="なにを追加する？" required type="text">
+              <div class="form-actions">
+                <button class="save-btn" type="submit">追加する</button>
+                <button class="cancel-btn" data-cancel-add="go" type="button">やめる</button>
+              </div>
+            </form>
+          </div>
+        </details>
+
+        <details class="bucket honey" data-group="plans" id="plans">
+          <summary class="bucket-heading">
+            <span class="bucket-title-wrap"><span class="bucket-title" lang="ja">デート</span></span>
+            <span class="bucket-count" data-progress="plans">0/3</span>
+            <svg aria-hidden="true" class="chevron" fill="none" height="18" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24" width="18"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
+          <div class="bucket-content">
+            <ul class="tasks" data-list="plans">
+              <li><label class="task"><input data-id="lego" type="checkbox"><span>Lego date night</span></label></li>
+              <li><label class="task"><input data-id="avengers" type="checkbox"><span>Avengers: Doomsday</span></label></li>
+              <li><label class="task"><input data-id="double-date" type="checkbox"><span>Double date with Bella and Finn</span></label></li>
+            </ul>
+            <div class="bucket-actions">
+              <button class="add-trigger" data-add="plans" type="button">追加</button>
+              <button aria-pressed="false" class="edit-trigger" data-editmode="plans" type="button">編集</button>
+            </div>
+            <form class="add-form" data-add-form="plans" hidden>
+              <label class="sr" for="new-plans">デートに追加</label>
+              <input autocomplete="off" id="new-plans" maxlength="90" placeholder="なにを追加する？" required type="text">
+              <div class="form-actions">
+                <button class="save-btn" type="submit">追加する</button>
+                <button class="cancel-btn" data-cancel-add="plans" type="button">やめる</button>
+              </div>
+            </form>
+          </div>
+        </details>
+      </div>
+      <div class="share-area">
+        <button class="share-btn" id="share-list" type="button">シェア</button>
+        <button class="reset-btn" id="reset-checks" type="button">リセット</button>
+      </div>
+    </section>
+    <footer class="footer">まってるね <span aria-hidden="true">♡</span></footer>
+  </main>
+
+  <dialog aria-labelledby="edit-title" class="edit-dialog" id="edit-dialog">
+    <form id="edit-form">
+      <div class="dialog-top">
+        <h3 id="edit-title">編集</h3>
+        <button aria-label="閉じる" class="dialog-x" id="dialog-close" type="button">×</button>
+      </div>
+      <label for="edit-text">なまえ</label>
+      <input id="edit-text" maxlength="90" required type="text">
+      <div class="dialog-buttons">
+        <button class="save-btn" type="submit">保存</button>
+        <button class="delete-btn" id="delete-task" type="button">けす</button>
+      </div>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
